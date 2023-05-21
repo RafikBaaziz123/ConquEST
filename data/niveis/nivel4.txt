@@ -1,0 +1,41 @@
+rio.gif
+% as linhas que come�am com % s�o de coment�rio
+% a primeira linha � sempre a imagem de fundo do n�vel
+% depois vem a descri��o dos v�rios edificios
+% no formato
+%  TIPO, X, Y, POPULA��O, EQUIPA
+% as equipas s�o: 0 - jogador (Romanos)
+%                 1 - Neutros
+%                 2 - Astecas
+%                 3 - Chineses
+%
+%cidade do jogador
+cidade,890,610,50,0
+santuario,740,620,50,0
+herdade,860,480,20,1
+herdade,800,320,20,1
+herdade,610,520,20,1
+herdade,470,570,20,1
+vila,560,375,10,1
+santuario,910,340,20,1
+castelo,400,485,20,1
+castelo,750,245,20,1
+%cidade dos chineses
+cidade,80,20,28,3
+aldeia,220,70,5,3
+castelo,260,140,30,1
+aldeia,80,160,5,1
+aldeia,10,250,5,1
+aldeia,140,250,5,1
+aldeia,280,250,5,1
+vila,340,375,10,1
+%cidade dos astecas
+cidade,90,380,35,2
+quinta,200,330,30,1
+templo,400,140,15,1
+templo,200,480,15,1
+torre,600,180,10,1
+aldeia,400,25,5,1
+aldeia,520,25,5,1
+aldeia,640,25,5,1
+%no final n�o se devem deixar linhas em branco

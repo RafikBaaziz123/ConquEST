@@ -1,0 +1,25 @@
+pedras.gif
+% as linhas que come�am com % s�o de coment�rio
+% a primeira linha � sempre a imagem de fundo do n�vel
+% depois vem a descri��o dos v�rios edificios
+% no formato
+%  TIPO, X, Y, POPULA��O, EQUIPA
+% as equipas s�o: 0 - jogador (Romanos)
+%                 1 - Neutros
+%                 2 - Astecas
+%                 3 - Chineses
+aldeia,10,100,15,0
+vila,80,100,15,0
+cidade,150,100,15,0
+campo,250,100,15,0
+quinta,320,100,15,0
+herdade,390,100,15,0
+torre,500,100,15,0
+forte,570,100,15,0
+castelo,640,100,15,0
+altar,750,100,15,0
+templo,820,100,15,0
+santuario,890,100,15,0
+vila,210,550,15,1
+vila,800,600,15,2
+%no final n�o se devem deixar linhas em branco

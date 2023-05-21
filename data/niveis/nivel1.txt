@@ -1,0 +1,23 @@
+pedras.gif
+% as linhas que começam com % são de comentário
+% a primeira linha é sempre a imagem de fundo do nível
+% depois vem a descrição dos vários edificios
+% no formato
+%  TIPO, X, Y, POPULAÇÃO, EQUIPA
+% as equipas são: 0 - jogador (Romanos)
+%                 1 - Neutros
+%                 2 - Astecas
+%                 3 - Chineses
+aldeia,10,100,15,0
+aldeia,50,200,10,0
+campo,200,250,5,1
+aldeia,200,350,5,1
+aldeia,200,450,5,1
+vila,450,400,15,1
+vila,300,400,15,1
+aldeia,650,450,15,1
+aldeia,650,550,15,1
+aldeia,650,620,15,1
+vila,800,500,10,2
+vila,800,600,15,2
+%no final não se devem deixar linhas em branco

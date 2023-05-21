@@ -1,0 +1,10 @@
+pedras.gif
+campo,10,100,20,0
+aldeia,10,600,5,0
+cidade,80,600,25,1
+vila,50,200,25,1
+torre,50,400,15,1
+herdade,700,100,25,2
+campo,700,600,15,2
+castelo,600,400,5,3
+quinta,600,200,25,3

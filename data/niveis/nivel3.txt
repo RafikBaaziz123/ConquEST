@@ -1,0 +1,29 @@
+pedras.gif
+aldeia,20,305,10,1
+forte,140,245,15,1
+quinta,270,210,10,1
+% cidade do jogador
+cidade,410,115,25,0
+aldeia,70,15,8,1
+aldeia,190,15,8,1
+aldeia,320,15,5,1
+aldeia,450,15,5,1
+aldeia,580,15,5,1
+% castelo e aldeia no centro
+castelo,480,360,50,1
+aldeia,645,350,5,1
+% cidade dos astecas
+cidade,635,485,25,2
+aldeia,635,585,5,1
+aldeia,760,525,5,1
+aldeia,750,610,5,1
+%aldeia,845,575,5,1
+%
+quinta,920,480,15,1
+% cidade dos chineses
+cidade,230,420,25,3
+aldeia,185,545,5,1
+aldeia,70,545,5,1
+%aldeia,110,640,5,1
+aldeia,300,545,5,1
+aldeia,120,480,5,1
