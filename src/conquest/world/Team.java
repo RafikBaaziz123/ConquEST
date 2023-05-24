@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import conquest.building.Building;
 import conquest.building.Town;
 import prof.jogos2D.image.*;
 
@@ -25,9 +26,9 @@ public class Team {
 	private String name;      // name of the team
 	private boolean neutral;  // is it a neutral team?
 	
-	// TODO support all building types
+	// TODO support all building types (DONE)
 	// list with all towns the team owns
-	private ArrayList<Town> towns = new ArrayList<Town>();	
+	private ArrayList<Building> buildings = new ArrayList<Building>();	
 	
 	// graphical elements
 	private ComponenteVisual flag;            // team flag
@@ -86,8 +87,8 @@ public class Team {
 		speedExtra = 0;
 		excessPopExtra = 0;
 		regenExtra = 0;
-		// TODO support all building types
-		for( Town v : towns )
+		// TODO support all building types 
+		for( Building v : buildings )
 			v.startTurn();
 	}
 
@@ -100,7 +101,7 @@ public class Team {
 		foodAvailable = baseFood;
 		foodRequired = 0;
 		// TODO support all building types
-		for( Town v : towns ) {
+		for( Building v : buildings ) {
 			foodAvailable += v.getFoodOutput();
 			foodRequired += v.howMuchGrowth();
 			population += v.getPopulation();
@@ -112,13 +113,13 @@ public class Team {
 		// if there is enough food, all get what they want
 		if( foodAvailable > foodRequired ) { 
 			// TODO support all building types
-			for( Town v : towns )
+			for( Building v : buildings )
 				v.regeneratePop( (int)(v.howMuchGrowth() ) );
 		}
 		// if food is below the requirements, population is reduced by 1 in each building
 		else if( foodAvailable < population){
 			// TODO support all building types
-			for( Town v : towns )
+			for( Building v : buildings )
 				v.regeneratePop( -1 );
 		}
 		// There is enough food but not enough for everybody to grow
@@ -126,7 +127,7 @@ public class Team {
 		else {
 			int foodRemaining = foodAvailable - population;
 			// TODO support all building types
-			for( Town v : towns ) {
+			for( Building v : buildings ) {
 				if( v.howMuchGrowth() > 0 ) {
 					v.regeneratePop( 1 );
 					foodRemaining--;
@@ -154,36 +155,39 @@ public class Team {
 	}
 
 	/**
-	 * Returns the number of towns owned by the team 
-	 * @return the number of towns owned by the team
+	 * Returns the number of buildings owned by the team 
+	 * @return the number of buildings owned by the team
 	 */
-	public int  getTownCount(){
+	public int  getBuildingCount(){
 		// TODO support all building types
-		return towns.size();
+		return buildings.size();
 	}
 
-	/** Returns a list with all towns owned by the team
-	 * @return a list with all towns owned by the team
+	/** Returns a list with all buildings owned by the team
+	 * @return a list with all buildings owned by the team
 	 */
-	public List<Town> getTowns() {
+	public List<Building> getBuildings() {
 		// TODO support all building types
-		return Collections.unmodifiableList( towns );
+
+		return Collections.unmodifiableList( buildings );
 	}
 	
-	/** adds a town
-	 * @param t town to add
+	/** adds a buildings
+	 * @param b building to add
 	 */
-	public void addTown( Town t ){
+	public void addBuilding( Building b ){
 		// TODO support all building types
-		towns.add( t );
+		System.out.println("Added building");
+		buildings.add( b );
 	}
 	
-	/** removes a town
-	 * @param t town to remove
+	/** removes a building
+	 * @param b building to remove
 	 */
-	public void removeTown( Town t ){
+	public void removeBuilding( Building b ){
 		// TODO support all building types
-		towns.remove( t );
+		System.out.println("removed building");
+		buildings.remove( b );
 	}
 	
 	/** Returns the flag image

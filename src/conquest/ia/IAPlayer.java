@@ -31,16 +31,16 @@ public class IAPlayer {
 		// Check, for each building the teams owns, if the population
 		// is higher than half its maximum population size.
 		// Is if is, then it attacks the closest building
-		// TODO support all building types
-		for( Town t : team.getTowns() ){
+		// TODO support all building types (DONE)
+		for( Building t : team.getBuildings() ){
 			// has more than half the maximum population?
 			if( t.getPopulation() > t.getMaxPopulation() / 2 ){
-				List<Town> targetCandidate = world.getTowns();
-				Town alvo = null;
+				List< Building> targetCandidate = world.getBuilding();
+				Building alvo = null;
 				double lowestDistanceSq = 0;
 				// TODO support all building types
 				// pick the building to attack
-				for( Town va : targetCandidate ){
+				for( Building va : targetCandidate ){
 					if( va.getTeam() == team ) // if it is from the same team ignore
 						continue;
 					if( alvo == null ){

@@ -60,7 +60,7 @@ public interface Building {
 	 * @param dest the building where this army will go
 	 * @return the created army, if population allows it
 	 */
-	Army recruitArmy(Town dest);
+	Army recruitArmy(Building dest);
 
 	/**
 	 * Enlist an army in this farm
@@ -68,7 +68,7 @@ public interface Building {
 	 * @param dest the building where this army will go
 	 * @return the created army, if population allows it
 	 */
-	Army enlistArmy(Town dest);
+	Army enlistArmy(Building dest);
 
 	/**
 	 * Creates an army
@@ -77,7 +77,7 @@ public interface Building {
 	 * @param nSoldiers number of soldiers
 	 * @return the created army
 	 */
-	Army createArmy(Town dest, int nSoldiers);
+	Army createArmy(Building dest, int nSoldiers);
 
 	/**
 	 * recruits inhabitants to form an army and returns the number of recruited
@@ -200,7 +200,7 @@ public interface Building {
 	 * 
 	 * @return the base food production
 	 */
-	int getBaseFoodOuput();
+	int getBaseFoodOutput();
 
 	/**
 	 * Sets the base food output

@@ -97,9 +97,9 @@ public class LevelReader {
 					
 					// is the building was created it is added to the world
 					if( town != null )
-						world.addTown( town );					
+						world.addBuilding(town);					
 					if( farm != null )
-						world.addFarm( farm );					
+						world.addBuilding( farm );					
 					line = in.readLine();
 				}				
 			} catch( Exception e ){

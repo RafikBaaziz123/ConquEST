@@ -18,8 +18,8 @@ public class World {
 	private ComponenteVisual backgroundImage;  
 	// TODO support all building types
 	// lists with all elements of the game
-	private ArrayList<Town> towns = new ArrayList<Town>();
-	private ArrayList<Farm> farms = new ArrayList<Farm>();
+	private ArrayList<Building> buildings = new ArrayList<Building>();
+
 	
 	private ArrayList<Army> armies = new ArrayList<Army>();
 	private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
@@ -38,11 +38,8 @@ public class World {
 		backgroundImage.desenhar( g );
 		
 		// TODO support all building types
-		for( Town v : towns )
+		for( Building v : buildings )
 			v.draw( g );
-		
-		for( Farm q : farms )
-			q.draw( g );
 		
 		for( Army b : armies )
 			b.draw( g );
@@ -78,11 +75,9 @@ public class World {
 			b.update();
 			
 		// TODO support all building types
-		for( Town v : towns )
+		for( Building v : buildings )
 			v.update();
 		
-		for( Farm q : farms )
-			q.update();
 
 		// remove terminated armies
 		for( int i = armies.size()-1; i >= 0; i-- ){
@@ -100,59 +95,43 @@ public class World {
 	/** Adds a town to the world
 	 * @param t town to add
 	 */
-	public synchronized void addTown( Town t ){
+	public synchronized void addBuilding(Building t ){
 		// TODO support all building types
-		towns.add( t );
+		buildings.add( t );
 	}
 	
 	/** Adds a farm to the world
 	 * @param f farm to the world
 	 */
-	public synchronized void addFarm( Farm f ){
-		// TODO support all building types
-		farms.add( f );
-	}
 
 	
 	/** Removes a town from the world
 	 * @param t town to remove
 	 */
-	public synchronized void remove( Town t ){
+	public synchronized void remove( Building t ){
 		// TODO support all building types
-		towns.remove( t );
-	}
-	
-	/** Removes a farm from the world
-	 * @param v the farm to remove
-	 */
-	public synchronized void remove( Farm f ){
-		// TODO support all building types
-		farms.remove( f );
+		buildings.remove( t );
 	}
 	
 	/** returns all towns present in this world
 	 * @return all towns present in the world
 	 */
-	public List<Town> getTowns() {		
+	public List<Building> getBuilding() {		
 		// TODO support all building types
-		return Collections.unmodifiableList( towns );
+		return Collections.unmodifiableList( buildings );
 	}
 
 	/** returns all farms present in this world
 	 * @return all farms present in this world
 	 */
-	public List<Farm> getFarm() {		
-		// TODO support all building types
-		return Collections.unmodifiableList( farms );
-	}
 	
 	/** Test if there is a town in a given point
 	 * @param pt point where to search
 	 * @return the town that contains point pt, or null if there is none
 	 */
-	public Town getTownAt(Point pt) {
+	public Building getTownAt(Point pt) {
 		// TODO support all building types
-		for( Town v : towns )
+		for( Building v : buildings )
 			if( v.isInside( pt ) )
 				return v;
 		return null;
@@ -162,13 +141,6 @@ public class World {
 	 * @param pt point where to search
 	 * @return the farm that contains point pt, or null if there is none
 	 */
-	public Farm getFarmAt(Point pt) {
-		// TODO support all building types
-		for( Farm q : farms )
-			if( q.isInside( pt ) )
-				return q;
-		return null;
-	}
 
 	/** Adds an army
 	 * @param a army to add
